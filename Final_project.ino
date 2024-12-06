@@ -107,16 +107,16 @@ void moveUSUp() {
 bool checkMovement() {
   long duration, distance;
   
-  // Clear trigger
+  
   digitalWrite(TRIGGER_PIN, LOW);  
   delayMicroseconds(2);
   
-  // Send pulse
+  
   digitalWrite(TRIGGER_PIN, HIGH);  
   delayMicroseconds(10);
   digitalWrite(TRIGGER_PIN, LOW);
   
-  // Measure pulse width to calculate distance
+  
   duration = pulseIn(ECHO_PIN, HIGH);
   distance = (duration / 2) / 29.1;  // Calculate distance in cm
 
@@ -130,7 +130,7 @@ bool checkMovement() {
   return false;  // No movement detected
 }
 
-// Function to handle losing the game
+
 void loseGame() {
   lcd.clear();
   lcd.setCursor(0, 0);
